@@ -1,10 +1,11 @@
+'allow pasting'
 function escreverEmClasseMui(classe, texto) {
     let campos = document.getElementsByClassName(classe);
 
     if (campos.length > 0) {
         for (let campo of campos) {
             campo.focus(); // Garante que o campo esteja ativo
-            
+
             let event = new Event('input', { bubbles: true });
             let nativeInputValueSetter = Object.getOwnPropertyDescriptor(
                 window.HTMLTextAreaElement.prototype, "value"
@@ -20,5 +21,5 @@ function escreverEmClasseMui(classe, texto) {
     }
 }
 
-// Execute no console do navegador:
-escreverEmClasseMui("MuiInputBase-input", "Meu novo texto!");
+// Exemplo de uso:
+escreverEmClasseMui("MuiInputBase-input", `coloque o texto aqui`);
